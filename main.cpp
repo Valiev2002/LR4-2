@@ -3,7 +3,7 @@
 #include<stdexcept>
 #include <algorithm>
 #include <string>
-/*class my_ex: public std::exception{
+class my_ex: public std::exception{
 public:
     my_ex(char *message,int data):std::exception(){
         this->data=data;//присваиваем входящий параметр конструктора нашему полю
@@ -25,7 +25,6 @@ void foo(int age){
 }
 class King { virtual ~King() {} };
 class Prince { virtual ~Prince() {} };
-*/
 void foo1(int a){
     std::cout<<"Enter a>0"<<std::endl;
     if(a<0){
@@ -45,7 +44,7 @@ public:
     }
 };
 int main() {
-  /*  std::cout<<"First exception"<<std::endl;
+    std::cout<<"First exception"<<std::endl;
     std::vector<int> vec(5);
     std::cout << "Vector size = " << vec.size() << '\n';
     try {
@@ -115,7 +114,6 @@ int main() {
     {
         std::cout << e.what() << '\n';
     }
-*/
   std::cout<<"Task 3"<<std::endl;
     try
     {
@@ -140,8 +138,6 @@ int main() {
         std::cout << "Error\n";
     }
     delete[] a;
-        A b;
-
     return 0;
 }
 
