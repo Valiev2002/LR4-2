@@ -4,13 +4,12 @@
 #include <algorithm>
 #include<exception>
 #include <string>
-class my_ex: public std::runtime_error{
+class my_ex: public std::exception{
 public:
-    my_ex(char *message,int data): std::runtime_error(message){
-        this->data=data;//присваиваем входящий параметр конструктора нашему полю
-    }
+    my_ex(std::string dat):data(dat) {};
+    virtual const char* what() const noexcept { return data.c_str(); }
 private:
-    int data;
+    std::string data;
 };
 void foo(int age){
     if(age==19){
