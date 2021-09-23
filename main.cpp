@@ -13,12 +13,14 @@ private:
 };
 void foo(int age){
     if(age==19){
-        throw std::runtime_error("This is my age");
+       std::cout<<"This is my age"<<std::endl;
     }
     if(age<0)
     {
-        throw std::runtime_error("error message");
+        throw my_ex("error message");
     }
+    if (age>0)
+        std::cout <<"Big boy with age: "<<age<<std::endl;
 }
 class King { virtual ~King();};
 class Prince { virtual ~Prince(); };
@@ -100,9 +102,12 @@ int main() {
     }*/
     std::cout<<"Task 2"<<std::endl;
     try{
-        foo(-1);
+        std::cout<<"Please enter your age: ";
+        int a;
+        std::cin>>a;
+        foo(a);
     }
-    catch(const std::runtime_error&ex){
+    catch(const std::exception&ex){
         std::cout<<"Error cathed: "<<ex.what()<<std::endl;
     }
   std::cout<<"Task 3"<<std::endl;
